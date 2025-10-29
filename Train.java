@@ -26,8 +26,8 @@ public class Train implements TrainRequirements{
     }
     
     /**
-    * access information about the car
-    * @return the information about the car
+    * access engine information about the car
+    * @return the engine information about the car
     */
     public Engine getEngine(){
         return this.engine;
@@ -50,8 +50,7 @@ public class Train implements TrainRequirements{
     * @return the maximum capacity of the train
     */
     public int getMaxCapacity(){//
-        return cars.size() * (cars.get(0).getCapacity());//the number of the car times each car's capacity
-
+        return cars.size() * (cars.get(0).getCapacity());//the number of the car times each car's capacit
     }
 
     /**

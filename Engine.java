@@ -9,7 +9,7 @@ public class Engine implements EngineRequirements{
     private double current_fuel_level;
 
     /**
-    * The constructor that builds engine objects with given fuel type, type level.
+    * The constructor that builds engine objects with given fuel type, fuel level. // miss type the fuel level or type level
     * @param fuel_type takes in the type of fuel engine uses including selection from STEAM, INTERNAL_COMBUSTION, ELECTRIC, OTHER
     * @param max_fuel_level engines' maximum level of fuel
     * @param current_fuel_level engines' current level of fuel
@@ -54,7 +54,7 @@ public class Engine implements EngineRequirements{
 
     /**
      * Checks if the engine have enough fuel to run. If there is, then decrease fuel level by 5 and return true else return false
-     * @return the current fuel level after running
+     * @return true if there are fuel left in the engine after running, otherwise false
      */
     public Boolean go(){
         if (current_fuel_level > 0){ //check if the fuel type is greater than zero
@@ -74,7 +74,7 @@ public class Engine implements EngineRequirements{
      * This main method tests all the method in the Engine class
      */
     public static void main(String[] args) {
-    Engine myEngine = new Engine(FuelType.ELECTRIC, 0.0, 100.0);
+    Engine myEngine = new Engine(FuelType.ELECTRIC, 100.0, 0.0); // the order of input is reversed, now corrected
     while (myEngine.go()) {
         System.out.println("Choo choo!");
     }
